@@ -26,6 +26,7 @@ COPY --from=base /usr /usr/src/image/usr/
 
 COPY --from=zosbin /0-db/zdbd/zdb /usr/src/image/usr/bin/zdb
 COPY --from=zosbin /0-db-fs/zdbfs /usr/src/image/usr/bin/zdbfs
+COPY --from=zosbin /0-stor_v2/zstor /usr/src/image/usr/bin/zstor
 
 # Fix up more stuff to move everything to /usr
 RUN cd /usr/src/image && \
