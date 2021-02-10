@@ -2,7 +2,7 @@
 FROM alpine:3.12 as zosbin
 ARG ARCH
 
-RUN apk --no-cache add alpine-sdk fuse3-dev hiredis-dev linux-headers
+RUN apk --no-cache add alpine-sdk fuse3-dev hiredis-dev linux-headers curl
 
 RUN git clone https://github.com/threefoldtech/0-db-fs && \
   cd 0-db-fs && \
@@ -14,3 +14,6 @@ RUN git clone https://github.com/threefoldtech/0-db && \
   cd ../zdbd && \
   make release
 
+RUN mkdir 0-stor_v2 && \
+  curl -L https://github.com/threefoldtech/0-stor_v2/releases/download/v0.1.1/zstor_v2-x86_64-linux-musl -o /0-stor_v2/zstor && \
+  chmod +x /0-stor_v2/zstor
