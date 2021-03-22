@@ -15,5 +15,7 @@ RUN git clone https://github.com/threefoldtech/0-db && \
   make release
 
 RUN mkdir 0-stor_v2 && \
-  curl -L https://github.com/threefoldtech/0-stor_v2/releases/download/v0.1.1/zstor_v2-x86_64-linux-musl -o /0-stor_v2/zstor && \
-  chmod +x /0-stor_v2/zstor
+  curl -L https://github.com/threefoldtech/0-stor_v2/releases/download/v0.2.0/zstor_v2-x86_64-linux-musl -o /0-stor_v2/zstor && \
+  chmod +x /0-stor_v2/zstor && \
+  curl -L https://github.com/threefoldtech/0-stor_v2/releases/download/v0.2.0/zstor_monitor-x86_64-linux-musl -o /0-stor_v2/monitor && \
+  chmod +x /0-stor_v2/monitor
